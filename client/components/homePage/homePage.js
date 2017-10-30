@@ -1,13 +1,17 @@
 import React from 'react';
+import NavMenu from './navMenu';
 
-var homePage = class HomePage extends React.Component {
+export default class HomePage extends React.Component {
+    constructor() {
+        super();
+    }
+
     render() {
         return(
             <div>
                 <h3>Heroes of the Storm Characters</h3>
+
             </div>
         );
     }
 };
-
-module.exports = homePage;

@@ -1,8 +1,11 @@
 import React from 'react';
 
-var HomePage = require('./homePage');
+import HomePage from './homePage/homePage';
 
 export default class App extends React.Component {
+    constructor() {
+        super();
+    }
   render () {
     return (<div>
         <HomePage/>
