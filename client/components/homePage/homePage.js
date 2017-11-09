@@ -2,8 +2,8 @@ import React from 'react';
 import NavMenu from './navMenu';
 
 export default class HomePage extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);    
     }
 
     render() {
