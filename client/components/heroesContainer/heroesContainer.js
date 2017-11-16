@@ -1,10 +1,12 @@
 import React from 'react';
+import HeroesList from './heroesList';
 
 export default class HeroesContainer extends React.Component {
     constructor(){
         super();
         this.state = {
-            heroes: []
+            heroNames: [],
+            heroesData: []
         }
     }
 
@@ -13,33 +15,25 @@ export default class HeroesContainer extends React.Component {
         .then(results => {
             return results.json();
         }).then(data => {
-            var heroes = data;
-            this.setState({heroes: heroes});
+            this.setState({heroesData: data});
         })
     }
 
+    // Takes the list of heroes and returns array of hero names.
+    heroesList(heroesArray) {
+        var heroes = heroesArray.map((hero) => {
+            var heroNames = [];
+            heroNames.push(hero.name);
+            return heroNames;
+        })
+        return heroes;
+    }
 
     render() {
-        heroesList() {
-            var heroes = this.state.heroes.map((hero) => {
-                var heroNames [];
-                heroNames.push(hero.name);
-                return heroNames;
-                debugger;
-            })
-            return (
-                heroes.map((name) => {
-                    <li className="list-group-item active">{name}</li>
-                });
-            );
-        }
-
+        this.state.heroNames = this.heroesList(this.state.heroesData);
         return (
             <div className="container">
-                <ul className="list-group">
-                  {heroesList()}
-
-                </ul>
+                <HeroesList names={this.state.heroNames} />
             </div>
         );
     }
