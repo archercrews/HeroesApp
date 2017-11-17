@@ -1,12 +1,12 @@
 // Sample for later reference
 
-export const showHomePage() {
+export function showHomePage() {
     return {
         type: 'HOMEPAGE'
     }
 }
 
-export const showHeroesList() {
+export function showHeroesList() {
     return {
         type: 'HEROES_LIST'
     }

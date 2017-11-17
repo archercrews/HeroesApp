@@ -1,15 +1,6 @@
 import React from 'react';
-import actions from './actions';
+import actions from '../actions';
 import HomePage from './homePage/homePage';
+import Routes from '../routes';
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-  render () {
-    return (<div>
-        <HomePage/>
-    </div>);
-  }
-}
+export default () => <Routes/>;

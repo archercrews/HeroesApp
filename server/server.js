@@ -18,7 +18,7 @@ app.engine('html', function(path, callbacks) {
 app.use(express.static(path.join(__dirname, '../client')));
 
 //Routes
-app.use('/', indexRoutes);
+//app.use('/', indexRoutes);
 
 //Error handler
 app.use(function(err, req, res, next) {
