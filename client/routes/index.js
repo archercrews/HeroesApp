@@ -23,13 +23,14 @@ export default () => {
                 <div>
                     <Navbar/>
                     {routes.map((route, index) => {
-                        debugger;
-                        <Route
-                            key={index}
-                            path={route.path}
-                            exact={route.exact}
-                            component={route.component}
-                        />
+                        return (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                exact={route.exact}
+                                component={route.component}
+                            />
+                        )
                     })}
                 </div>
 
